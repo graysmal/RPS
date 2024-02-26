@@ -8,9 +8,17 @@
 <body>
     <script>
 
-        let player_input = prompt("Rock, Paper, or Scissors?: ");
-        
+        function recievePlayerInput() {
+            let player_input = prompt("Rock, Paper, or Scissors?: ");
+            player_input = player_input.toLowerCase();
+            if (player_input != "rock" && player_input != "paper" && player_input != "scissors" ) {
+                alert("Not a valid move!");
+                player_input = recievePlayerInput();
+            }
+            return player_input;
+        }
 
+        player_input = recievePlayerInput();
 
     </script>
     
