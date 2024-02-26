@@ -18,7 +18,67 @@
             return player_input;
         }
 
-        player_input = recievePlayerInput();
+        function sendComputerInput() {
+            let rand = Math.floor(Math.random() * 3);
+            return (rand == 0 ? "rock" : rand == 1 ? "paper" : "scissors")
+        }    
+
+        function playRound(player_input, computer_input) {
+            switch (player_input) {
+                case "rock":
+                    switch (computer_input) {
+                        case "rock":
+                            alert("ROCK! Tie!");
+                            break;
+                        case "paper":
+                            alert("PAPER! You Lose!");
+                            computer_score++;
+                            break;
+                        case "scissors":
+                            alert("SCISSORS! You Win!");
+                            player_score++;
+                            break;                            
+                    }
+                    break;
+                case "paper":
+                    switch (computer_input) {
+                        case "rock":
+                            alert("ROCK! You Win!");
+                            player_score++;
+                            break;
+                        case "paper":
+                            alert("PAPER! Tie!");
+                            break;
+                        case "scissors":
+                            alert("SCISSORS! You Lose!");
+                            computer_score++;
+                            break;                            
+                    }
+                    break;
+                case "scissors":
+                    switch (computer_input) {
+                        case "rock":
+                            alert("ROCK! You Lose!");
+                            computer_score++;
+                            break;
+                        case "paper":
+                            alert("PAPER! You Win!");
+                            player_score++;
+                            break;
+                        case "scissors":
+                            alert("SCISSORS! Tie!");
+                            break;                            
+                    }
+                    break;
+            }
+        }
+        
+        let player_score = 0;
+        let computer_score = 0;
+
+        
+        
+
 
     </script>
     
