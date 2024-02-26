@@ -76,7 +76,15 @@
         let player_score = 0;
         let computer_score = 0;
 
+        function playGame(rounds) {
+            while (player_score + computer_score < rounds) {
+                player_input = recievePlayerInput();
+                playRound(player_input, sendComputerInput());
+            }
+            alert("Player: " + player_score + ", Computer: " + computer_score);
+        }
         
+        playGame(5);
         
 
 
